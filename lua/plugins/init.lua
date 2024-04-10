@@ -33,8 +33,7 @@ return {
         "typescript-language-server",
         "deno",
         "prettier",
-
-        -- c/cpp stuff
+        "vue-language-server", -- c/cpp stuff
         "clangd",
         "clang-format",
         "cmake-language-server",
