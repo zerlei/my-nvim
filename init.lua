@@ -34,10 +34,10 @@ if not vim.g.vscode then
   dofile(vim.g.base46_cache .. "statusline")
 
   require "nvchad.autocmds"
-vim.schedule(function()
-  dofile(vim.g.base46_cache .. "syntax")
-  dofile(vim.g.base46_cache .. "treesitter")
-end)
+  vim.schedule(function()
+    dofile(vim.g.base46_cache .. "syntax")
+    dofile(vim.g.base46_cache .. "treesitter")
+  end)
 else
   vim.schedule(function()
     require "options"
