@@ -1,9 +1,7 @@
 vim.g.mapleader = " "
-
 -- !!!!for vscode mode just load mappings and options!!!!
 if not vim.g.vscode then
   vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
-
   -- bootstrap lazy and all plugins
   local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -36,6 +34,10 @@ if not vim.g.vscode then
   dofile(vim.g.base46_cache .. "statusline")
 
   require "nvchad.autocmds"
+vim.schedule(function()
+  dofile(vim.g.base46_cache .. "syntax")
+  dofile(vim.g.base46_cache .. "treesitter")
+end)
 else
   vim.schedule(function()
     require "options"

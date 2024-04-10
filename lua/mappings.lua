@@ -36,7 +36,7 @@ if not vim.g.vscode then
   end, { desc = "Terminal Toggle Floating term" })
 
   map("n", "<leader>se", function()
-    require("auto-session.session-lens").searchssion()
+    require("auto-session.session-lens").search_session()
   end, {
     noremap = true,
     nowait = true,
