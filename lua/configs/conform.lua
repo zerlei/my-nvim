@@ -1,6 +1,14 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
+    typescript = { "prettier" },
+    javascript = { "prettier" },
+    css = { "prettier" },
+    vue = { "prettier" },
+    html = { "prettier" },
+    sh = { "shfmt" },
+    cpp = { "clang_format" },
+    cmake = { "cmake_format" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },

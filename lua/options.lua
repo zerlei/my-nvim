@@ -1,6 +1,8 @@
-require "nvchad.options"
+if not vim.g.vscode then
+  require "nvchad.options"
+else
+end
 
--- add yours here!
-
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+local o = vim.o
+o.cursorlineopt = "both" -- to enable cursorline!
+vim.opt.backupcopy = "yes"
