@@ -12,6 +12,11 @@ local options = {
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
+  -- formatters = {
+  --   csharp = {
+  --     command = "dotnet csharpier"
+  --   }
+  -- }
 
   -- format_on_save = {
   --   -- These options will be passed to conform.format()

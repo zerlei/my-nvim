@@ -31,12 +31,13 @@ return {
         "css-lsp",
         "html-lsp",
         "typescript-language-server",
-        "deno",
         "prettier",
         "vue-language-server", -- c/cpp stuff
         "clangd",
         "clang-format",
         "cmake-language-server",
+
+        "omnisharp",
       },
     },
   },
@@ -57,7 +58,8 @@ return {
         "markdown",
         "markdown_inline",
         "cmake",
-        "vue"
+        "vue",
+        "c_sharp",
       },
     },
   },
@@ -77,7 +79,7 @@ return {
         theme_conf = { border = true },
         previewer = false,
       },
-    }
+    },
   },
   -- {
   --   "JoosepAlviste/nvim-ts-context-commentstring",

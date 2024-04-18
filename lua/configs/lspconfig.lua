@@ -36,7 +36,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "lua_ls", "html", "cssls", "clangd", "cmake" }
+local servers = { "lua_ls", "html", "cssls", "clangd", "cmake"}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -64,3 +64,11 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
 }
 lspconfig.volar.setup {}
+
+-- c#
+local pid = vim.fn.getpid()
+local omnisharp_bin =mason_registry.get_package('omnisharp'):get_install_path() .. "/omnisharp"
+lspconfig.omnisharp.setup{
+    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) }
+    -- Additional configuration can be added here
+}
