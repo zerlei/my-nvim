@@ -1,7 +1,6 @@
 local cmp = require "cmp"
 
 dofile(vim.g.base46_cache .. "cmp")
-
 local cmp_ui = require("nvconfig").ui.cmp
 local cmp_style = cmp_ui.style
 
@@ -107,7 +106,7 @@ local options = {
       "i",
       "s",
     }),
-    ["<C-j>"] = cmp.mapping(function(fallback)
+    ["<A-j>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif require("luasnip").expand_or_jumpable() then
@@ -119,7 +118,7 @@ local options = {
       "i",
       "s",
     }),
-    ["<C-k>"] = cmp.mapping(function(fallback)
+    ["<A-k>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif require("luasnip").jumpable(-1) then
