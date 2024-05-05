@@ -1,5 +1,7 @@
-require "nvchad.mappings"
-
+if not vim.g.vscode then
+  require "nvchad.mappings"
+else
+end
 local map = vim.keymap.set
 -- move
 map("n", "J", "3j", { desc = "Jump down 3 lines", nowait = true })
