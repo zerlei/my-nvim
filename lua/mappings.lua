@@ -58,9 +58,14 @@ else
     vscode.call "workbench.action.closeActiveEditor"
   end, { nowait = true })
 
-  map("n", "<leader>/", function()
-    vscode.call "editor.action.commentLine"
-  end, { nowait = true })
+  --  use ctrl+/ is commentLine better
+  -- map("n", "<leader>/", function()
+  --   vscode.call "editor.action.commentLine"
+  -- end, { nowait = true })
+  -- map("v", "<leader>/", function()
+  --   vscode.call "editor.action.commentLine"
+  -- end, { nowait = true })
+
    -- vscode left bar show or hide 
   map("n", "<leader>ab", function()
     vscode.call "workbench.action.toggleActivityBarVisibility"
@@ -69,15 +74,27 @@ else
   map("n", "<leader>sb", function()
     vscode.call "workbench.action.toggleSidebarVisibility"
   end, { nowait = true })
-  -- map("n", "<leader>x", function()
-  --   vscode.call "workbench.action.closeActiveEditor"
+  map("n", "<Tab>", function()
+    vscode.call "workbench.action.nextEditorInGroup"
+  end, { nowait = true })
+  map("n", "<s-Tab>", function()
+    vscode.call "workbench.action.previousEditorInGroup"
+  end, { nowait = true })
+
+
+
+  -- use the shortcut in vscode is better 搜索文件
+  -- map("n", "<c-p>", function()
+  --   vscode.call "workbench.action.quickOpenNavigateNextInFilePicker"
   -- end, { nowait = true })
-  -- map("n", "<leader>x", function()
-  --   vscode.call "workbench.action.closeActiveEditor"
-  -- end, { nowait = true })
-  -- map("n", "<leader>x", function()
-  --   vscode.call "workbench.action.closeActiveEditor"
-  -- end, { nowait = true })
+
+  -- swithc in diff editor
+  map("n", "<c-h>", function()
+    vscode.call "workbench.action.focusPreviousGroup"
+  end, { nowait = true })
+  map("n", "<c-l>", function()
+    vscode.call "workbench.action.focusNextGroup"
+  end, { nowait = true })
   -- map("n", "<leader>x", function()
   --   vscode.call "workbench.action.closeActiveEditor"
   -- end, { nowait = true })
