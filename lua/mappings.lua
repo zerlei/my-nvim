@@ -53,4 +53,26 @@ else
   map("n", "<leader>x", function()
     vscode.call "workbench.action.closeActiveEditor"
   end, { nowait = true })
+
+  map("n", "<leader>/", function()
+    vscode.call "editor.action.commentLine"
+  end, { nowait = true })
+  -- map("n", "<leader>x", function()
+  --   vscode.call "workbench.action.closeActiveEditor"
+  -- end, { nowait = true })
+  -- map("n", "<leader>x", function()
+  --   vscode.call "workbench.action.closeActiveEditor"
+  -- end, { nowait = true })
+  -- map("n", "<leader>x", function()
+  --   vscode.call "workbench.action.closeActiveEditor"
+  -- end, { nowait = true })
+  -- map("n", "<leader>x", function()
+  --   vscode.call "workbench.action.closeActiveEditor"
+  -- end, { nowait = true })
+  -- map("n", "<leader>x", function()
+  --   vscode.call "workbench.action.closeActiveEditor"
+  -- end, { nowait = true })
+  -- map("n", "<leader>x", function()
+  --   vscode.call "workbench.action.closeActiveEditor"
+  -- end, { nowait = true })
 end
