@@ -43,6 +43,8 @@ if not vim.g.vscode then
     noremap = true,
     nowait = true,
   })
+
+  map("n", "<leader>sb", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
 else
   local vscode = require "vscode-neovim"
 
@@ -59,9 +61,14 @@ else
   map("n", "<leader>/", function()
     vscode.call "editor.action.commentLine"
   end, { nowait = true })
-  -- map("n", "<leader>x", function()
-  --   vscode.call "workbench.action.closeActiveEditor"
-  -- end, { nowait = true })
+   -- vscode left bar show or hide 
+  map("n", "<leader>ab", function()
+    vscode.call "workbench.action.toggleActivityBarVisibility"
+  end, { nowait = true })
+   -- vscode primary bar show or hide 
+  map("n", "<leader>sb", function()
+    vscode.call "workbench.action.toggleSidebarVisibility"
+  end, { nowait = true })
   -- map("n", "<leader>x", function()
   --   vscode.call "workbench.action.closeActiveEditor"
   -- end, { nowait = true })
