@@ -58,12 +58,15 @@ lspconfig.tsserver.setup {
   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
   capabilities = capabilities,
 }
-lspconfig.volar.setup {}
+-- lspconfig.volar.setup {}
 
 -- c#
 local pid = vim.fn.getpid()
 local omnisharp_bin = mason_registry.get_package("omnisharp"):get_install_path() .. "/omnisharp"
 lspconfig.omnisharp.setup {
   cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
   -- Additional configuration can be added here
 }
