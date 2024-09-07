@@ -23,6 +23,7 @@ map("n", "<C-v>", '"*p`]', { desc = "ctrl+v,pasted from system", nowait = true }
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
 if not vim.g.vscode then
+  local Utils = require('utils')
   map({ "n", "t" }, "<A-i>", function()
     require("nvchad.term").toggle {
       pos = "float",
@@ -45,6 +46,12 @@ if not vim.g.vscode then
   })
 
   map("n", "<leader>sb", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
+  map("n", "<c-a-h>",function ()
+    Utils.move_currentbuf_to_left_window()
+  end,{desc = "Move current buffer to left window"})
+  map("n", "<c-a-l>",function ()
+    Utils.move_currentbuf_to_right_window()
+  end,{desc = "Move current buffer to right window"})
 else
   local vscode = require "vscode-neovim"
 
