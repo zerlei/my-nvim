@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 local conf = require("nvconfig").ui.lsp
-
+-- sdf
 local on_attach = function(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP " .. desc }
@@ -12,7 +12,7 @@ local on_attach = function(_, bufnr)
   map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Show signature help")
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
-
+  map("n", "gh", vim.lsp.buf.hover, opts "Go to definition")
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts "List workspace folders")
