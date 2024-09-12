@@ -1,15 +1,37 @@
--- This file  needs to have same structure as nvconfig.lua 
+-- This file  needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
 ---@type ChadrcConfig
-local M = {}
+local M = {
+  base46 = {
+    theme = 'bearded-arc'
+  },
 
-M.ui = {
-    theme = "doomchad"
+  mason = {
+    pkgs= {
+      "lua-language-server",
+      "stylua",
 
-    -- hl_override = {
-    -- 	Comment = { italic = true },
-    -- 	["@comment"] = { italic = true },
-    -- },
+      -- web dev stuff
+      "css-lsp",
+      "html-lsp",
+      "typescript-language-server",
+      "prettier",
+      "vue-language-server", -- c/cpp stuff
+      "clangd",
+      "clang-format",
+      "cmake-language-server",
+      "omnisharp",
+      "csharp-language-server"
+    },
+  },
 }
+-- M.ui = {
+--     theme = "doomchad"
+--
+--     -- hl_override = {
+--     -- 	Comment = { italic = true },
+--     -- 	["@comment"] = { italic = true },
+--     -- },
+-- }
 
 return M

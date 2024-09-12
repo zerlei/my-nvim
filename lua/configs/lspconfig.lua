@@ -30,7 +30,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "lua_ls", "html", "cssls", "clangd", "cmake" }
+local servers = { "lua_ls", "html", "cssls", "clangd", "cmake","csharp_ls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -44,7 +44,7 @@ local mason_registry = require "mason-registry"
 local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
   .. "/node_modules/@vue/language-server"
 -- typescript
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   on_attach = on_attach,
   init_options = {
     plugins = {
@@ -62,11 +62,11 @@ lspconfig.tsserver.setup {
 
 -- c#
 local pid = vim.fn.getpid()
-local omnisharp_bin = mason_registry.get_package("omnisharp"):get_install_path() .. "/omnisharp"
-lspconfig.omnisharp.setup {
-  cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  -- Additional configuration can be added here
-}
+-- local omnisharp_bin = mason_registry.get_package("omnisharp"):get_install_path() .. "/omnisharp"
+-- lspconfig.omnisharp.setup {
+--   cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+--   on_attach = on_attach,
+--   on_init = on_init,
+--   capabilities = capabilities,
+--   -- Additional configuration can be added here
+-- }

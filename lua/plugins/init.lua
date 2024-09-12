@@ -23,22 +23,6 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-
-        -- web dev stuff
-        "css-lsp",
-        "html-lsp",
-        "typescript-language-server",
-        "prettier",
-        "vue-language-server", -- c/cpp stuff
-        "clangd",
-        "clang-format",
-        "cmake-language-server",
-
-        "omnisharp",
-      },
     },
   },
 
