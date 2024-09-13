@@ -35,9 +35,9 @@ local servers = { "lua_ls", "html", "cssls", "clangd", "cmake","csharp_ls" }
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
   }
 end
 local mason_registry = require "mason-registry"
