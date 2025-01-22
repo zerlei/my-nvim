@@ -20,8 +20,7 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-    },
+    opts = {},
   },
 
   {
@@ -61,6 +60,12 @@ return {
         theme_conf = { border = true },
         previewer = false,
       },
+    },
+    {
+      "github/copilot.vim",
+      lazy = false,
+      config = function() end,
+      opts = {},
     },
   },
   -- {
