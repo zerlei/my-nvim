@@ -5,7 +5,7 @@
 ---@type ChadrcConfig
 local M = {
   base46 = {
-    theme = 'bearded-arc'
+    theme = 'ayu_light'
   },
 
   mason = {

@@ -41,6 +41,7 @@ return {
         "cmake",
         "vue",
         "c_sharp",
+        "doxygen",
       },
     },
   },
@@ -68,6 +69,14 @@ return {
       opts = {},
     },
   },
+  {
+    "danymat/neogen",
+    config = true,
+    lazy = false,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+  },
+
   -- {
   --   "JoosepAlviste/nvim-ts-context-commentstring",
   --   lazy = false
