@@ -22,6 +22,9 @@ map("n", "p", "p`]", { desc = "When pasted,move cursor to end of the yanked text
 map("n", "<C-v>", '"*p`]', { desc = "ctrl+v,pasted from system", nowait = true })
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
+-----------------------------------------------------------------------------------------------------
+-- ONLY NeoVim keymap ONLY NeoVim keymap  ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap 
+-------------------------------------------------------------------------------------------------------
 if not vim.g.vscode then
   local Utils = require('utils')
   map({ "n", "t" }, "<A-i>", function()
@@ -52,7 +55,16 @@ if not vim.g.vscode then
   map("n", "<c-a-l>",function ()
     Utils.move_currentbuf_to_right_window()
   end,{desc = "Move current buffer to right window"})
+  map({"n","i"}, "<c-_>",function ()
+    require('neogen').generate()
+  end,{desc = "neogen comments!"})
+  map({"n","i"}, "<c-/>",function ()
+    require('neogen').generate()
+  end,{desc = "neogen comments!"})
 else
+-----------------------------------------------------------------------------------------------------
+-- vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap
+-----------------------------------------------------------------------------------------------------
   local vscode = require "vscode-neovim"
 
   map("n", "<leader>fm", function()
@@ -66,12 +78,12 @@ else
   end, { nowait = true })
 
   --  use ctrl+/ is commentLine better
-  -- map("n", "<leader>/", function()
-  --   vscode.call "editor.action.commentLine"
-  -- end, { nowait = true })
-  -- map("v", "<leader>/", function()
-  --   vscode.call "editor.action.commentLine"
-  -- end, { nowait = true })
+  map("n", "<leader>/", function()
+    vscode.call "editor.action.commentLine"
+  end, { nowait = true })
+  map("v", "<leader>/", function()
+    vscode.call "editor.action.commentLine"
+  end, { nowait = true })
 
    -- vscode left bar show or hide 
   map("n", "<leader>ab", function()
