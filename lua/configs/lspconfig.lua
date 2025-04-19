@@ -1,6 +1,10 @@
 local map = vim.keymap.set
-local conf = require("nvconfig").ui.lsp
--- sdf
+
+local nvlsp = require "nvchad.configs.lspconfig"
+local lspconfig = require "lspconfig"
+
+nvlsp.defaults() -- loads nvchad's defaults
+
 local on_attach = function(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP " .. desc }
@@ -26,11 +30,10 @@ local on_attach = function(_, bufnr)
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
   map("n", "gr", vim.lsp.buf.references, opts "Show references")
 end
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+local on_init = nvlsp.on_init
+local capabilities = nvlsp.capabilities
 
-local lspconfig = require "lspconfig"
-local servers = { "lua_ls", "html", "cssls", "clangd", "cmake","csharp_ls" }
+local servers = { "lua_ls", "html", "cssls", "clangd", "cmake","csharp_ls","nil_ls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -60,13 +63,3 @@ lspconfig.ts_ls.setup {
 }
 -- lspconfig.volar.setup {}
 
--- c#
-local pid = vim.fn.getpid()
--- local omnisharp_bin = mason_registry.get_package("omnisharp"):get_install_path() .. "/omnisharp"
--- lspconfig.omnisharp.setup {
---   cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
---   on_attach = on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
---   -- Additional configuration can be added here
--- }

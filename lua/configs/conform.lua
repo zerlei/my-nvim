@@ -9,6 +9,7 @@ local options = {
     sh = { "shfmt" },
     cpp = { "clang_format" },
     cmake = { "cmake_format" },
+    nix = {"nixfmt"},
     -- css = { "prettier" },
     -- html = { "prettier" },
   },

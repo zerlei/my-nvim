@@ -20,7 +20,23 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {},
+    opts = {
+      -- available_servers = {
+      --   "clangd",
+      --   "clang-format",
+      --   "cmake-language-server",
+      --   "cmakelang",
+      --   "css-lsp",
+      --   "html-lsp",
+      --   "lua-language-server",
+      --   "vue-language-server",
+      --   "stylua",
+      --   "prettier",
+      --   "shfmt",
+      --   "typescript-language-server",
+      --   "stylua",
+      -- }
+    },
   },
 
   {
@@ -42,6 +58,7 @@ return {
         "vue",
         "c_sharp",
         "doxygen",
+        "nix",
       },
     },
   },
@@ -138,6 +155,53 @@ return {
     lazy = false,
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*"
+  },
+  {
+    "davvid/telescope-git-grep.nvim",
+  },
+  { "nvim-tree/nvim-web-devicons", opts = {} },
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>tt",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>tX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>ts",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      {
+        "<leader>tl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>tL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>tQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
+  },
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    "nvim-pack/nvim-spectre",
   },
 
   -- {

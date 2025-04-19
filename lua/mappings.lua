@@ -23,10 +23,10 @@ map("n", "<C-v>", '"*p`]', { desc = "ctrl+v,pasted from system", nowait = true }
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
 -----------------------------------------------------------------------------------------------------
--- ONLY NeoVim keymap ONLY NeoVim keymap  ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap 
+-- ONLY NeoVim keymap ONLY NeoVim keymap  ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap   ONLY NeoVim keymap
 -------------------------------------------------------------------------------------------------------
 if not vim.g.vscode then
-  local Utils = require('utils')
+  local Utils = require "utils"
   map({ "n", "t" }, "<A-i>", function()
     require("nvchad.term").toggle {
       pos = "float",
@@ -49,22 +49,40 @@ if not vim.g.vscode then
   })
 
   map("n", "<leader>sb", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
-  map("n", "<c-a-h>",function ()
+  map("n", "<c-a-h>", function()
     Utils.move_currentbuf_to_left_window()
-  end,{desc = "Move current buffer to left window"})
-  map("n", "<c-a-l>",function ()
+  end, { desc = "Move current buffer to left window" })
+  map("n", "<c-a-l>", function()
     Utils.move_currentbuf_to_right_window()
-  end,{desc = "Move current buffer to right window"})
-  map({"n","i"}, "<c-_>",function ()
-    require('neogen').generate()
-  end,{desc = "neogen comments!"})
-  map({"n","i"}, "<c-/>",function ()
-    require('neogen').generate()
-  end,{desc = "neogen comments!"})
+  end, { desc = "Move current buffer to right window" })
+  map({ "n", "i" }, "<c-_>", function()
+    require("neogen").generate()
+  end, { desc = "neogen comments!" })
+  map({ "n", "i" }, "<c-/>", function()
+    require("neogen").generate()
+  end, { desc = "neogen comments!" })
+  map("n", "<leader>s", '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre",
+  })
+  map("n", "<leader>ws", function()
+    require("spectre").open_visual { select_word = true }
+  end, {
+    desc = "Search current word",
+  })
+  map("v", "<leader>s", function()
+    require("spectre").open_visual { select_word = true }
+  end, {
+    desc = "Search current word",
+  })
+  map("n", "<leader>ps", function()
+    require("spectre").open_file_search { select_word = true }
+  end, {
+    desc = "Search on current file",
+  })
 else
------------------------------------------------------------------------------------------------------
--- vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap
------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------
+  -- vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap
+  -----------------------------------------------------------------------------------------------------
   local vscode = require "vscode-neovim"
 
   map("n", "<leader>fm", function()
@@ -85,11 +103,11 @@ else
     vscode.call "editor.action.commentLine"
   end, { nowait = true })
 
-   -- vscode left bar show or hide 
+  -- vscode left bar show or hide
   map("n", "<leader>ab", function()
     vscode.call "workbench.action.toggleActivityBarVisibility"
   end, { nowait = true })
-   -- vscode primary bar show or hide 
+  -- vscode primary bar show or hide
   map("n", "<leader>sb", function()
     vscode.call "workbench.action.toggleSidebarVisibility"
   end, { nowait = true })
@@ -99,8 +117,6 @@ else
   map("n", "<s-Tab>", function()
     vscode.call "workbench.action.previousEditorInGroup"
   end, { nowait = true })
-
-
 
   -- use the shortcut in vscode is better 搜索文件
   -- map("n", "<c-p>", function()
