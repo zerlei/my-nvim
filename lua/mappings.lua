@@ -61,7 +61,7 @@ if not vim.g.vscode then
   map({ "n", "i" }, "<c-/>", function()
     require("neogen").generate()
   end, { desc = "neogen comments!" })
-  map("n", "<leader>s", '<cmd>lua require("spectre").toggle()<CR>', {
+  map("n", "<leader>ss", '<cmd>lua require("spectre").toggle()<CR>', {
     desc = "Toggle Spectre",
   })
   map("n", "<leader>ws", function()
@@ -69,7 +69,7 @@ if not vim.g.vscode then
   end, {
     desc = "Search current word",
   })
-  map("v", "<leader>s", function()
+  map("v", "<leader>ss", function()
     require("spectre").open_visual { select_word = true }
   end, {
     desc = "Search current word",
