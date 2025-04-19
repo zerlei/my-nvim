@@ -156,9 +156,6 @@ return {
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*"
   },
-  {
-    "davvid/telescope-git-grep.nvim",
-  },
   { "nvim-tree/nvim-web-devicons", opts = {} },
   {
     "folke/trouble.nvim",
