@@ -201,6 +201,16 @@ return {
     "nvim-pack/nvim-spectre",
   },
 
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      local o = require "nvchad.configs.nvimtree"
+      o.filters = { enable = false }
+      return o
+    end,
+  },
+
   -- {
   --   "JoosepAlviste/nvim-ts-context-commentstring",
   --   lazy = false
