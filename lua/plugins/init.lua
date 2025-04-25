@@ -85,6 +85,7 @@ return {
     --   config = function() end,
     --   opts = {},
     -- },
+    -- s
     {
       "zbirenbaum/copilot.lua",
       cmd = "Copilot",
