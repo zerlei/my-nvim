@@ -130,6 +130,9 @@ else
   map("n", "<c-l>", function()
     vscode.call "workbench.action.focusNextGroup"
   end, { nowait = true })
+  map("n", "<leader>fb", function()
+    vscode.call "workbench.action.quickOpen"
+  end, { nowait = true })
   -- map("n", "<leader>x", function()
   --   vscode.call "workbench.action.closeActiveEditor"
   -- end, { nowait = true })
