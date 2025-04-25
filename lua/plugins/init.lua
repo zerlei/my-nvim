@@ -89,6 +89,7 @@ return {
     {
       "zbirenbaum/copilot.lua",
       cmd = "Copilot",
+      -- enabled = false,
       event = "InsertEnter",
       config = function()
         require("copilot").setup {
@@ -114,9 +115,10 @@ return {
             hide_during_completion = true,
             debounce = 75,
             keymap = {
-              accept = "<S-Tab>",
-              accept_word = "<A-Tab>",
-              accept_line = "<C-Tab>",
+              accept = "<A-Tab>",
+              accept_word = "<S-Tab>",
+              --  --I dot't kown why <C-Tab> not work --> see your blog on zerlei.cn
+              accept_line = "<Right>",
               next = "<M-]>",
               prev = "<M-[>",
               dismiss = "<C-]>",

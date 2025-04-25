@@ -4,6 +4,7 @@ else
 end
 local map = vim.keymap.set
 -- move
+-- map("n", "<Right>", "3j", { desc = "Jump down 3 lines", nowait = true })
 map("n", "J", "3j", { desc = "Jump down 3 lines", nowait = true })
 map("n", "K", "3k", { desc = "Jump up 3 lines", nowait = true })
 map("n", "L", "$", { desc = "Move to the line's end", nowait = true })
