@@ -124,7 +124,7 @@ return {
           },
           filetypes = {
             yaml = false,
-            markdown = true,
+            markdown = false,
             help = false,
             gitcommit = false,
             gitrebase = false,
