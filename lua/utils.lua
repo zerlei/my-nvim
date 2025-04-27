@@ -1,19 +1,16 @@
 local api = vim.api
 
-local Log = {
-  log = function(msg)
-    local file, err = io.open("./nvim_log.log", "a")
-    if not file then
-      print(err)
-      return
-    end
-    file:write(msg .. "\n")
-    file:close()
-  end,
-}
-
+local log = function(msg)
+  local file, err = io.open("./nvim_log.log", "a")
+  if not file then
+    print(err)
+    return
+  end
+  file:write(msg .. "\n")
+  file:close()
+end
 local Utils = {
-
+  log = log,
   move_currentbuf_to_left_window = function()
     local current_win = api.nvim_get_current_win() -- 获取当前窗口 ID
     local current_pos = api.nvim_win_get_position(current_win) -- 获取当前窗口的位置

@@ -42,44 +42,14 @@ if not vim.g.vscode then
     }
   end, { desc = "Terminal Toggle Floating term" })
 
-  map("n", "<leader>se", function()
-    require("auto-session.session-lens").search_session()
-  end, {
-    noremap = true,
-    nowait = true,
-  })
-
   map("n", "<leader>sb", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
   map("n", "<c-a-h>", function()
+    -- Utils.log "move current buffer to left window"
     Utils.move_currentbuf_to_left_window()
   end, { desc = "Move current buffer to left window" })
   map("n", "<c-a-l>", function()
     Utils.move_currentbuf_to_right_window()
   end, { desc = "Move current buffer to right window" })
-  map({ "n", "i" }, "<c-_>", function()
-    require("neogen").generate()
-  end, { desc = "neogen comments!" })
-  map({ "n", "i" }, "<c-/>", function()
-    require("neogen").generate()
-  end, { desc = "neogen comments!" })
-  map("n", "<leader>ss", '<cmd>lua require("spectre").toggle()<CR>', {
-    desc = "Toggle Spectre",
-  })
-  map("n", "<leader>ws", function()
-    require("spectre").open_visual { select_word = true }
-  end, {
-    desc = "Search current word",
-  })
-  map("v", "<leader>ss", function()
-    require("spectre").open_visual { select_word = true }
-  end, {
-    desc = "Search current word",
-  })
-  map("n", "<leader>ps", function()
-    require("spectre").open_file_search { select_word = true }
-  end, {
-    desc = "Search on current file",
-  })
 else
   -----------------------------------------------------------------------------------------------------
   -- vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap vscode keymap
