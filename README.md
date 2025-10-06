@@ -10,6 +10,3 @@ It works in 3 models:
 
 - make all(almost) keyboard shortcut writed in neovim mapping. the reason are that neovim mapping is easy to config and vscode sync sometimes mistake.
 
-
-
-

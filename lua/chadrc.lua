@@ -5,7 +5,8 @@
 ---@type ChadrcConfig
 local M = {
   base46 = {
-    theme = 'tomorrow_night'
+    theme = 'tomorrow_night',
+    -- transparency = true,
     -- theme = 'ayu_light'
   },
 
