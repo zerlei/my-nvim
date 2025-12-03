@@ -67,13 +67,9 @@ else
   end, { nowait = true })
 
   --  use ctrl+/ is commentLine better
-  map("n", "<leader>/", function()
+  map({"n","v"}, "<leader>/", function()
     vscode.call "editor.action.commentLine"
   end, { nowait = true })
-  map("v", "<leader>/", function()
-    vscode.call "editor.action.commentLine"
-  end, { nowait = true })
-
   -- vscode left bar show or hide
   map("n", "<leader>ab", function()
     vscode.call "workbench.action.toggleActivityBarVisibility"
@@ -104,6 +100,7 @@ else
   map("n", "<leader>fb", function()
     vscode.call "workbench.action.quickOpen"
   end, { nowait = true })
+
   -- map("n", "<leader>x", function()
   --   vscode.call "workbench.action.closeActiveEditor"
   -- end, { nowait = true })
