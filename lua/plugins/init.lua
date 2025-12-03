@@ -62,7 +62,7 @@ return {
       },
     },
   },
-
+  --  
   -- {
   --   "github/copilot.vim",
   --   lazy = false,
@@ -72,7 +72,7 @@ return {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    -- enabled = false,
+    enabled = false,
     event = "InsertEnter",
     config = function()
       require("copilot").setup {
@@ -133,6 +133,67 @@ return {
       }
     end,
   },
+  -- {
+  --   "milanglacier/minuet-ai.nvim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("minuet").setup {
+  --       request_timeout = 200000,
+  --       virtualtext = {
+  --         auto_trigger_ft = { "lua", "md" },
+  --         keymap = {
+  --           -- accept whole completion
+  --           accept = "<A-Tab>",
+  --           -- accept one line
+  --           accept_line = "<Right>",
+  --           -- accept n lines (prompts for number)
+  --           -- e.g. "A-z 2 CR" will accept 2 lines
+  --           -- accept_n_lines = "<Right>",
+  --           -- Cycle to prev completion item, or manually invoke completion
+  --           -- prev = "<A-[>",
+  --           -- Cycle to next completion item, or manually invoke completion
+  --           -- next = "<A-]>",
+  --           -- dismiss = "<A-e>",
+  --         },
+  --       }, -- Your configuration options here
+  --       -- provider = "openai_fim_compatible",
+  --       -- provider_options = {
+  --       --   openai_fim_compatible = {
+  --       --     api_key = "sk-b9922c42d4184013bdcf1f22f0d72b12",
+  --       --     name = "deepseek",
+  --       --     optional = {
+  --       --       max_tokens = 256,
+  --       --       top_p = 0.9,
+  --       --     },
+  --       --   },
+  --       -- },
+  --       provider = "openai_compatible",
+  --       provider_options = {
+  --         openai_compatible = {
+  --           end_point = "https://api.deepseek.com/v1/chat/completions",
+  --           api_key = "sk-b9922c42d4184013bdcf1f22f0d72b12",
+  --           name = "deepseek",
+  --           optional = {
+  --             max_tokens = 256,
+  --             top_p = 0.9,
+  --           },
+  --         },
+  --       },
+  --       -- provider = "openai_compatible",
+  --       -- provider_options = {
+  --       --   openai_compatible = {
+  --       --     end_point = "https://api.deepseek.com/v1/chat/completions",
+  --       --     api_key = "sk-b9922c42d4184013bdcf1f22f0d72b12",
+  --       --     name = "deepseek",
+  --       --     optional = {
+  --       --       max_tokens = 256,
+  --       --       top_p = 0.9,
+  --       --     },
+  --       --   },
+  --       -- },
+  --     }
+  --   end,
+  -- },
   -- for auto comment
   {
     "danymat/neogen",
@@ -388,6 +449,7 @@ return {
       }
     end,
   },
+  -- debugger
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
